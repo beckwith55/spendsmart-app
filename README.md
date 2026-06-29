@@ -1,24 +1,170 @@
-Indiana Medicaid and HealthNow Networks Breach Case Study
-1. Were Indiana Medicaid or HealthNow Networks Required to Notify Patients Under HIPAA/HITECH/Omnibus Rule?
-Yes, both organizations were required to notify patients, though for slightly different reasons.
-Indiana Medicaid is a government-run program and clearly qualifies as a covered entity under HIPAA. When protected health information (PHI) is exposed, covered entities are required to notify affected individuals, the Department of Health and Human Services (HHS), and in cases affecting 500 or more people, prominent media outlets in the affected area. Since this breach affected 1.1 million people, Indiana Medicaid had a clear and undeniable obligation to notify.
-HealthNow Networks is a bit more complicated. The data was left exposed by a former software developer who had worked on a database for the company. Under the HITECH Act and the Omnibus Rule, business associates, meaning third parties that handle PHI on behalf of a covered entity, share direct liability for breaches. Even though the developer had abandoned the project, the data was never properly secured or returned, which means HealthNow Networks and arguably the developer themselves carried responsibility for that exposure. If HealthNow Networks qualifies as a covered entity or business associate, notification was required.
-2. Did Indiana Medicaid or HealthNow Networks Make Any Public Statements?Searched the webSearched the webIndiana Medicaid and HealthNow Networks Breach Case Study
-1. Were Indiana Medicaid or HealthNow Networks Required to Notify Patients Under HIPAA/HITECH/Omnibus Rule?
-Yes, but only Indiana Medicaid had a clear legal obligation under HIPAA. As a government-administered program handling protected health information (PHI), Indiana Medicaid is a covered entity under HIPAA. The HIPAA Breach Notification Rule requires covered entities to notify affected individuals, the Department of Health and Human Services (HHS), and relevant media outlets when a breach affects 500 or more people. With 1.1 million individuals impacted, Indiana Medicaid had no choice but to notify.
-HealthNow Networks is a different story. As a telemarketing firm, HealthNow Networks was not covered under HIPAA, meaning the patients affected by that breach would not necessarily be notified. Even though the exposed database contained PHI like Social Security numbers, health insurance information, and medical conditions, HIPAA only applies to covered entities and their business associates. A telemarketing company operating outside of the healthcare system does not fall into either category, which left nearly a million people without any guaranteed right to notification under federal law. HIPAA Journal
-2. Did Indiana Medicaid or HealthNow Networks Make Any Public Statements?
-Indiana Medicaid's response came through its fiscal agent, DXC Technology. DXC Technology stated that a hyperlink to an internal IHCP report containing patient information had been accessible online, and that it was contacting all affected individuals by mail to satisfy state and federal regulatory requirements. As an additional precaution, DXC offered complimentary credit protection services for 12 months, while noting it did not believe any information had actually been misused. HIPAA Journal
-HealthNow Networks' response was far more limited. Researchers from ZDNet and Databreaches.net managed to contact the owner of HealthNow Networks, which was no longer in business, and the software developer, both of whom confirmed the database had been deleted. There was no formal public statement, press release, or patient notification from HealthNow Networks itself. HIPAA Journal
-3. How Did Indiana Medicaid and HealthNow Networks Notify Patients?
-The two organizations handled notification very differently. Indiana Medicaid followed a structured, regulation-driven process. DXC Technology contacted all affected individuals by mail and offered complimentary credit protection services for 12 months. This approach aligned with HIPAA's breach notification requirements for large-scale breaches affecting hundreds of thousands of people. HIPAA Journal
-HealthNow Networks, on the other hand, made no formal effort to notify patients at all. Because HealthNow Networks was not covered under HIPAA, it was unlikely that the patients included in the breach would be notified, though the FTC was contacted. The exposure was ultimately discovered not by the company itself, but by an outside researcher using a public search tool called Shodan, and it was journalists, not the company, who reported it to authorities. Healthcare IT News
-4. Do State Data Breach Notification Laws Apply?
-Yes, state laws are very relevant here, especially for the HealthNow Networks breach where federal HIPAA protections did not apply. Indiana has its own breach notification statute that requires businesses to notify affected residents when their personal information is compromised. Indiana's law requires notification without unreasonable delay, and no later than 45 days after discovery of the breach, and also requires notifying the Indiana Attorney General within that same window. If more than 1,000 residents are notified, all three major consumer reporting agencies must also be alerted. Davis Wright Tremaine
-However, gaps exist across state lines. At the time of the breach, not all states had introduced data breach notification laws, meaning whether individuals were notified could depend entirely on which state they lived in, even when the same breach affected them. This is one of the most significant weaknesses in the current U.S. data protection framework. HIPAA Journal
-5. What Steps Could Have Been Taken to Prevent or Minimize These Breaches?
-For Indiana Medicaid, the breach happened because an internal report containing patient information was accessible via a live hyperlink on the public internet. This could have been prevented through basic access controls, regular audits of what data is externally reachable, and stricter policies around how internal reports are generated and shared. Encrypting data at rest and in transit would have added another layer of protection, and routine network scans would likely have caught the exposed link far sooner.
-For HealthNow Networks, the problems were even more fundamental. The data was left in an unsecured root folder on an AWS instance that the developer had abandoned years earlier. Basic vendor management practices, like requiring developers to return or destroy data when a project ends and signing formal data use agreements, would have prevented this entirely. Additionally, HealthNow Networks should have maintained an inventory of where its data lived, including with third-party contractors, and conducted periodic checks to make sure former vendors were no longer holding onto sensitive information.
-6. Were Any Enforcement Actions or Fines Levied?
-For the specific 2017 Indiana Medicaid breach described in this case study, no publicly documented enforcement action or fine from HHS OCR appears to have been issued. The breach was attributed to DXC Technology, a contractor, and the data exposed was relatively limited in scope (no Social Security numbers or financial information were included), which may have factored into how regulators responded.
-For HealthNow Networks, no HIPAA enforcement action was possible because the company was not a HIPAA-covered entity. The breach was reported to the FTC, FBI, and other law enforcement agencies, but HealthNow Networks was no longer a registered business as of 2015, when it failed to file an annual report with Florida authorities, making any meaningful enforcement action practically difficult. This case is often cited as an example of the gaps that exist when sensitive health data ends up in the hands of entities that fall outside of HIPAA's reach entirely. HIPAA Journal
+# SpendSmart – Personal Budget & Expense Tracker
+### Application Outline Report – Updated | Version 1.1 | Week 4 Update
+
+---
+
+## I. Version Changelog
+
+| Version | Date | Changes Made | Status |
+|---------|------|--------------|--------|
+| v1.0 | Week 1 | Initial outline submitted -- project description, problem statement, platform, front/back end, functionality, and wireframe descriptions | Complete |
+| v1.1 | Week 4 | Added changelog section, refined functionality details, updated database plan to clarify PostgreSQL vs MongoDB usage, added notes on API error handling | Current |
+| v1.2 | Week 7 | Code pushed to GitHub -- working login screen, expense entry screen, and basic dashboard; README updated to reflect current build | In Progress |
+| v2.0 | Week 8 (Final) | Final submission -- all core screens complete, budget logic implemented, reports screen functional, full README and Wiki updated | Planned |
+
+### Summary of Changes This Week (v1.1)
+
+Since the initial outline was submitted in week 1, a few things have been adjusted based on a better understanding of the scope:
+
+- Clarified the database structure -- PostgreSQL handles all the core transactional data (users, expenses, budgets) while MongoDB is just for preferences and notification settings since that data doesn't need to be relational
+- Expanded the functionality section to include notes on how the app will handle API errors and connectivity issues -- something I forgot to think about in the first draft
+- Removed the Plaid integration from the core plan and moved it to a future enhancement. It adds a lot of complexity and isn't really necessary to demonstrate the core functionality of the app
+- Updated the wireframe section to be more specific about navigation flow between screens
+
+---
+
+## II. Project Description
+
+SpendSmart is a budget and expense tracking app built for people who want to actually know where their money is going. The idea came from personal experience honestly -- I'd try to keep track of spending in a notes app or spreadsheet and it would last maybe two weeks before I stopped. Other apps I tried were either way too complicated or kept pushing me to connect a bank account which wasn't something I was comfortable with.
+
+SpendSmart is meant to be the middle ground: simple enough to use every day, but detailed enough to give real insight into spending habits.
+
+- **App Name:** SpendSmart – Personal Budget & Expense Tracker
+- **Who it's for:** People who want to track spending without a huge learning curve -- mainly college students and young adults
+- **What it does:** Quick expense logging, monthly budgets per category, and simple reports
+- **Timeline:** 16 weeks (this semester)
+
+---
+
+## III. Problem Addressing
+
+Most people have no idea what they actually spend in a month until they check their bank account and it's lower than expected. The tools that exist are either overkill or just not useful enough to keep using.
+
+### A. The Problems
+- Manually tracking expenses in a notes app or spreadsheet stops working pretty fast
+- You don't realize you've gone over budget until it's already happened
+- A lot of budget apps require linking a bank account or paying for a subscription to get anything useful
+- Looking back at spending patterns across multiple months is basically impossible with most free tools
+
+### B. What This App Does About It
+- Logging an expense takes less than 10 seconds -- just amount, category, done
+- Notifications go out before you actually hit your limit, not after
+- No bank linking needed, everything is entered manually so it stays private
+- Monthly reports let you compare spending month to month in a simple chart
+
+---
+
+## IV. Platform
+
+### A. Mobile (main platform)
+- iPhone and iPad -- iOS 15 and up
+- Android phones -- Android 10 and up
+
+### B. Web (secondary)
+- Browser version for people who want to check things on a computer
+  - Works on Chrome, Firefox, Safari, Edge
+
+### C. Distribution
+- App Store and Google Play for mobile
+- Web version hosted through AWS
+
+---
+
+## V. Front/Back End Support
+
+### A. Front End
+- React Native for mobile, React.js for the web side
+- Keeping components shared between both as much as possible to save time
+- Material UI and React Native Paper for the visual components
+- Redux Toolkit for managing app state
+- TypeScript to keep the code cleaner and catch errors early
+- Charts handled by Victory Native (mobile) and Recharts (web)
+
+### B. Back End
+- Node.js and Express for the API
+- PostgreSQL for the main database -- users, transactions, budget settings
+  - MongoDB for storing preferences and notification settings since that data is less structured
+- Auth done with JWT tokens, Google login supported through OAuth 2.0
+- Hosted on AWS (EC2, RDS, S3)
+- Firebase for push notifications
+- Git and GitHub for version control throughout the project
+
+### C. Outside APIs
+- ExchangeRate-API -- for handling different currencies
+- Plaid -- moved to future enhancement, not part of core build
+
+---
+
+## VI. Functionality
+
+### A. Accounts / Login
+- Create an account with email and password or sign in with Google
+- Standard password reset through email
+- Token-based sessions so you stay logged in without it being a security issue
+
+### B. Adding Expenses
+- Tap add, enter the amount, pick a category, optionally add a note -- that's it
+- Built-in categories: Food, Transportation, Housing, Entertainment, Health, Shopping, Other
+- Can add custom categories if the defaults don't cover something
+- Edit or delete entries if you mess up
+
+### C. Budgets
+- Set a limit for each category at the start of the month
+- Can also set one overall monthly spending cap
+- Progress bars on the home screen so you can see where you stand
+- Notifications go out at 75% and 100% of whatever limit you set
+
+### D. Dashboard and Reports
+- Home screen gives a quick snapshot -- how much you've spent, recent transactions, budget status
+- Pie chart breaking down where money went by category
+- Line chart showing the last 6 months so you can spot patterns
+- Export the whole report as a PDF or CSV if you need it
+
+### E. Settings
+- Change currency
+- Turn notifications on or off
+- Update account info
+- Download your data or delete your account
+
+---
+
+## VII. Design / Wireframes
+
+Full wireframes are being built in Figma and will be attached in the next submission. Navigation flow has been updated since v1.0 -- the Add screen is now accessible from any screen via a floating button rather than only through the bottom nav bar.
+
+### A. Login Screen
+- Logo up top, centered
+- Email and password fields
+- Sign In button, Google login option below it
+- Link to sign up if you don't have an account yet
+
+### B. Home / Dashboard
+- Greeting at the top with the current month shown
+- Big summary card showing total spent vs budget remaining
+- Row of category cards you can scroll through, each with a small progress bar
+- List of your last few transactions underneath
+- Nav bar at the bottom: Home, Reports, Settings + floating Add button
+
+### C. Add Expense Screen
+- Amount field front and center, big enough to tap easily
+- Category picker below it as a grid of icons
+- Date defaults to today but you can change it
+- Small text field for a note if you want one
+- Option to attach a photo of a receipt
+- Save button at the bottom
+
+### D. Reports Screen
+- Pick which month you want to look at up top
+- Pie chart and bar chart for that month's spending
+- Scrollable list of all transactions for the month
+- Export button at the bottom
+
+### E. General Design Choices
+- Keeping it black and white, clean and minimal
+- Font will be Inter or something similar, nothing fancy
+- Using Material Design icons since they're consistent and recognizable
+- Making sure contrast and text sizes meet accessibility standards
+
+---
+
+*SpendSmart | Outline v1.1 | Week 4 Update*
