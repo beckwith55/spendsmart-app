@@ -1,147 +1,24 @@
-# SpendSmart – Personal Budget & Expense Tracker
-### Application Outline Report | Version 1.0 | Mobile & Web
-
----
-
-## I. Project Description
-
-SpendSmart is a budget and expense tracking app built for people who want to actually know where their money is going. The idea came from a pretty common frustration -- most people either rely on spreadsheets (which are a pain to maintain) or download some bloated finance app that takes 20 minutes to set up and still doesn't tell you anything useful. SpendSmart is meant to be the middle ground: simple enough to use every day, but detailed enough to give you real insight into your spending.
-
-- **App Name:** SpendSmart – Personal Budget & Expense Tracker
-- **Target Users:** Mostly people in their 20s and 30s trying to get a better handle on day-to-day spending
-- **Main Goal:** Let users log expenses quickly, set budgets by category, and see a clear picture of where their money goes each month
-- **Project Timeline:** Built over a 16-week semester
-
----
-
-## II. Problem Addressing
-
-The core problem is simple: most people don't really know how much they spend or where. It's not that they don't care -- they just don't have a tool that makes tracking easy enough to stick with. Existing apps are either too basic or require linking bank accounts, which a lot of people aren't comfortable doing.
-
-### A. Problems Being Solved
-- Keeping track of expenses manually is tedious and most people give up within a week
-- It's easy to blow past a budget when you have no real-time way to know how close you are
-- Most free apps are cluttered with features people don't need or push you to pay for anything useful
-- There's no easy way to look back at past months and spot trends in your spending
-
-### B. How SpendSmart Addresses These
-- Quick-entry expense logging -- adding a transaction takes under 10 seconds
-- Budget alerts sent to your phone when you're getting close to a limit
-- Clean monthly reports that show spending by category without overwhelming the user
-- No bank linking required -- fully manual, which keeps it private and low-friction
-
----
-
-## III. Platform
-
-### A. Primary Platform – Mobile
-- iOS (iPhone and iPad) -- requires iOS 15 or later
-- Android -- requires Android 10 (API 29) or higher
-
-### B. Secondary Platform – Web
-- A browser-based version for users who prefer managing finances on a laptop or desktop
-  - Works on Chrome, Firefox, Safari, and Edge (current and previous version)
-
-### C. How It Gets to Users
-- Mobile: distributed through the Apple App Store and Google Play Store
-- Web: hosted on AWS, accessible through any modern browser
-
----
-
-## IV. Front/Back End Support
-
-### A. Front End
-- React Native for mobile, React.js for the web version -- shared component logic where possible
-- UI components: React Native Paper (mobile) and Material UI (web)
-- State management handled with Redux Toolkit
-- Charts and graphs: Victory Native on mobile, Recharts on web
-- Written in TypeScript for better code reliability
-
-### B. Back End
-- Node.js with Express.js handling the REST API
-- PostgreSQL as the main database -- stores users, transactions, and budget data
-  - MongoDB used alongside it for user preferences and notification settings
-- Login handled with JWT tokens; Google Sign-In supported via OAuth 2.0
-- Hosted on AWS -- EC2 for the server, RDS for the database, S3 for any stored files
-- Push notifications sent through Firebase Cloud Messaging
-- Code managed with Git and hosted on GitHub
-
-### C. Third-Party Integrations
-- Plaid API: available as an optional add-on for users who want to auto-import bank transactions
-- ExchangeRate-API: supports multiple currencies for users outside the US
-
----
-
-## V. Functionality
-
-### A. Login & Account Creation
-- Sign up with an email and password, or use Google to log in faster
-- Forgot password flow handled through email
-- Sessions managed securely with token-based auth
-
-### B. Logging Expenses
-- Enter an amount, pick a category, add a date and optional note -- done
-- Default categories: Food, Transportation, Housing, Entertainment, Health, Shopping, Other
-- Users can create their own custom categories if needed
-- Edit or delete any past entry
-
-### C. Setting & Managing Budgets
-- Set a spending limit for each category at the start of the month
-- Set an overall monthly cap on top of the category limits
-- Progress bars show how much of each budget has been used
-- Get a push notification at 75% and again at 100% of any budget limit
-
-### D. Dashboard & Reports
-- Home screen shows a monthly summary, recent transactions, and budget health at a glance
-- Spending breakdown by category shown as a pie chart
-- Six-month trend line so you can see if your habits are improving
-- Reports can be exported as a PDF or CSV
-
-### E. Settings
-- Switch between currencies
-- Control which notifications you receive
-- Update account info
-- Export your data or delete your account entirely (GDPR compliant)
-
----
-
-## VI. Design (Wireframes)
-
-Full wireframe mockups will be built in Figma and included with the next submission. Below are the key screens planned for the app.
-
-### A. Login / Registration Screen
-- App logo and name centered at the top
-- Email and password fields below
-- Two buttons: Sign In and Continue with Google
-- Link to create a new account at the bottom
-
-### B. Home Dashboard
-- Header shows a greeting, the current month, and the user's profile icon
-- A summary card shows total spent vs. total budget with a circular indicator
-- Category cards scroll horizontally, each showing a mini progress bar
-- The five most recent transactions are listed below
-- Bottom nav bar: Home, Add, Reports, Settings
-
-### C. Add Expense Screen
-- Large amount input at the top -- tapping brings up a number pad
-- Category grid below for quick selection
-- Date picker defaults to today but can be changed
-- Optional description field and a camera icon for attaching a receipt photo
-- Save button at the bottom
-
-### D. Reports Screen
-- Month picker at the top to flip between months
-- Pie chart showing category breakdown for that month
-- Bar chart showing spending week by week
-- Full transaction list for the selected month below the charts
-- Export button for PDF or CSV
-
-### E. Visual Design Notes
-- Color scheme: black and white primary, clean and readable
-- Font: Inter or Roboto, kept simple with three size levels
-- Icons from the Material Design set
-- Accessibility: meets WCAG 2.1 AA contrast standards, supports larger text sizes
-
----
-
-*SpendSmart | Application Outline | v1.0*
+Indiana Medicaid and HealthNow Networks Breach Case Study
+1. Were Indiana Medicaid or HealthNow Networks Required to Notify Patients Under HIPAA/HITECH/Omnibus Rule?
+Yes, both organizations were required to notify patients, though for slightly different reasons.
+Indiana Medicaid is a government-run program and clearly qualifies as a covered entity under HIPAA. When protected health information (PHI) is exposed, covered entities are required to notify affected individuals, the Department of Health and Human Services (HHS), and in cases affecting 500 or more people, prominent media outlets in the affected area. Since this breach affected 1.1 million people, Indiana Medicaid had a clear and undeniable obligation to notify.
+HealthNow Networks is a bit more complicated. The data was left exposed by a former software developer who had worked on a database for the company. Under the HITECH Act and the Omnibus Rule, business associates, meaning third parties that handle PHI on behalf of a covered entity, share direct liability for breaches. Even though the developer had abandoned the project, the data was never properly secured or returned, which means HealthNow Networks and arguably the developer themselves carried responsibility for that exposure. If HealthNow Networks qualifies as a covered entity or business associate, notification was required.
+2. Did Indiana Medicaid or HealthNow Networks Make Any Public Statements?Searched the webSearched the webIndiana Medicaid and HealthNow Networks Breach Case Study
+1. Were Indiana Medicaid or HealthNow Networks Required to Notify Patients Under HIPAA/HITECH/Omnibus Rule?
+Yes, but only Indiana Medicaid had a clear legal obligation under HIPAA. As a government-administered program handling protected health information (PHI), Indiana Medicaid is a covered entity under HIPAA. The HIPAA Breach Notification Rule requires covered entities to notify affected individuals, the Department of Health and Human Services (HHS), and relevant media outlets when a breach affects 500 or more people. With 1.1 million individuals impacted, Indiana Medicaid had no choice but to notify.
+HealthNow Networks is a different story. As a telemarketing firm, HealthNow Networks was not covered under HIPAA, meaning the patients affected by that breach would not necessarily be notified. Even though the exposed database contained PHI like Social Security numbers, health insurance information, and medical conditions, HIPAA only applies to covered entities and their business associates. A telemarketing company operating outside of the healthcare system does not fall into either category, which left nearly a million people without any guaranteed right to notification under federal law. HIPAA Journal
+2. Did Indiana Medicaid or HealthNow Networks Make Any Public Statements?
+Indiana Medicaid's response came through its fiscal agent, DXC Technology. DXC Technology stated that a hyperlink to an internal IHCP report containing patient information had been accessible online, and that it was contacting all affected individuals by mail to satisfy state and federal regulatory requirements. As an additional precaution, DXC offered complimentary credit protection services for 12 months, while noting it did not believe any information had actually been misused. HIPAA Journal
+HealthNow Networks' response was far more limited. Researchers from ZDNet and Databreaches.net managed to contact the owner of HealthNow Networks, which was no longer in business, and the software developer, both of whom confirmed the database had been deleted. There was no formal public statement, press release, or patient notification from HealthNow Networks itself. HIPAA Journal
+3. How Did Indiana Medicaid and HealthNow Networks Notify Patients?
+The two organizations handled notification very differently. Indiana Medicaid followed a structured, regulation-driven process. DXC Technology contacted all affected individuals by mail and offered complimentary credit protection services for 12 months. This approach aligned with HIPAA's breach notification requirements for large-scale breaches affecting hundreds of thousands of people. HIPAA Journal
+HealthNow Networks, on the other hand, made no formal effort to notify patients at all. Because HealthNow Networks was not covered under HIPAA, it was unlikely that the patients included in the breach would be notified, though the FTC was contacted. The exposure was ultimately discovered not by the company itself, but by an outside researcher using a public search tool called Shodan, and it was journalists, not the company, who reported it to authorities. Healthcare IT News
+4. Do State Data Breach Notification Laws Apply?
+Yes, state laws are very relevant here, especially for the HealthNow Networks breach where federal HIPAA protections did not apply. Indiana has its own breach notification statute that requires businesses to notify affected residents when their personal information is compromised. Indiana's law requires notification without unreasonable delay, and no later than 45 days after discovery of the breach, and also requires notifying the Indiana Attorney General within that same window. If more than 1,000 residents are notified, all three major consumer reporting agencies must also be alerted. Davis Wright Tremaine
+However, gaps exist across state lines. At the time of the breach, not all states had introduced data breach notification laws, meaning whether individuals were notified could depend entirely on which state they lived in, even when the same breach affected them. This is one of the most significant weaknesses in the current U.S. data protection framework. HIPAA Journal
+5. What Steps Could Have Been Taken to Prevent or Minimize These Breaches?
+For Indiana Medicaid, the breach happened because an internal report containing patient information was accessible via a live hyperlink on the public internet. This could have been prevented through basic access controls, regular audits of what data is externally reachable, and stricter policies around how internal reports are generated and shared. Encrypting data at rest and in transit would have added another layer of protection, and routine network scans would likely have caught the exposed link far sooner.
+For HealthNow Networks, the problems were even more fundamental. The data was left in an unsecured root folder on an AWS instance that the developer had abandoned years earlier. Basic vendor management practices, like requiring developers to return or destroy data when a project ends and signing formal data use agreements, would have prevented this entirely. Additionally, HealthNow Networks should have maintained an inventory of where its data lived, including with third-party contractors, and conducted periodic checks to make sure former vendors were no longer holding onto sensitive information.
+6. Were Any Enforcement Actions or Fines Levied?
+For the specific 2017 Indiana Medicaid breach described in this case study, no publicly documented enforcement action or fine from HHS OCR appears to have been issued. The breach was attributed to DXC Technology, a contractor, and the data exposed was relatively limited in scope (no Social Security numbers or financial information were included), which may have factored into how regulators responded.
+For HealthNow Networks, no HIPAA enforcement action was possible because the company was not a HIPAA-covered entity. The breach was reported to the FTC, FBI, and other law enforcement agencies, but HealthNow Networks was no longer a registered business as of 2015, when it failed to file an annual report with Florida authorities, making any meaningful enforcement action practically difficult. This case is often cited as an example of the gaps that exist when sensitive health data ends up in the hands of entities that fall outside of HIPAA's reach entirely. HIPAA Journal
